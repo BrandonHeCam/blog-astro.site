@@ -1,21 +1,12 @@
 ---
+// Importar Layout
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Greeting from "../components/Gretting.jsx";
 
+const pageTitle = "Página de inicio";
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
-  </head>
-  <body>
-    <nav>
-      <a href="/">Inicio</a>
-      <a href="/about/">Sobre mi</a>
-      <a href="/blog/">Mi Blog</a>
-    </nav>
-    <h1>Mi Primer Sitio Web en Astro</h1>
-  </body>
-</html>
+<BaseLayout pageTitle={pageTitle}>
+  <h2>Mi impresionante subtítulo de blog</h2>
+  <Greeting client:load messages={["Hej", "Hallo", "Hola", "Habari"]} />
+</BaseLayout>
